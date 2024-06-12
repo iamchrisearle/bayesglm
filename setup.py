@@ -1,6 +1,14 @@
 #### setup.py
 from setuptools import setup, find_packages
 
+
+def get_version():
+    with open("your_python_package/__init__.py") as f:
+        for line in f:
+            if line.startswith("__version__"):
+                return line.split("=")[1].strip().strip("'\"")
+
+
 setup(
     name="bayesglm",
     version="0.1.0",
